@@ -2,7 +2,7 @@ package domain.function;
 
 public class PayOrder implements MainFunction {
     @Override
-    public void execute() {
-
+    public boolean execute() {
+        return true;
     }
 }

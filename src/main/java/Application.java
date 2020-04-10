@@ -1,21 +1,20 @@
-import domain.Menu;
-import domain.MenuRepository;
-import domain.Table;
-import domain.TableRepository;
+import domain.function.MainFunction;
+import domain.function.MainFunctionFactory;
 import view.InputView;
 import view.OutputView;
-
-import java.util.List;
 
 public class Application {
     // TODO 구현 진행
     public static void main(String[] args) {
-        final List<Table> tables = TableRepository.tables();
-        OutputView.printTables(tables);
+        boolean programIsRunning = true;
 
-        final int tableNumber = InputView.inputTableNumber();
+        while (programIsRunning) {
+            OutputView.printMainFunctions();
 
-        final List<Menu> menus = MenuRepository.menus();
-        OutputView.printMenus(menus);
+            final int mainFunctionNumber = InputView.inputMainFunctionNumber();
+            MainFunction mainFunction = MainFunctionFactory.from(mainFunctionNumber);
+
+            programIsRunning = mainFunction.execute();
+        }
     }
 }
