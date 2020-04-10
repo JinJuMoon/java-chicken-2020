@@ -23,7 +23,9 @@ public class PayOrder implements MainFunction {
 
         final int paymentSystemNumber = InputView.inputPaymentSystem();
         Payment payment = PaymentFactory.from(paymentSystemNumber);
+
         final int priceToPay = payment.calculatePriceToPay(order);
+        OutputView.printPriceToPay(priceToPay);
 
         return true;
     }
