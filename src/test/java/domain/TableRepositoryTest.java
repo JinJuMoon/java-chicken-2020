@@ -9,7 +9,7 @@ class TableRepositoryTest {
 
     @DisplayName("주어진 번호로 해당하는 테이블을 찾는 기능")
     @Test
-    void findByNumber() {
+    void findTableByNumber() {
         int findingNumber = 3;
         Table foundTable = TableRepository.findTableByNumber(findingNumber);
 

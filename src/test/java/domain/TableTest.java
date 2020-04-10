@@ -13,4 +13,18 @@ public class TableTest {
         Table table = new Table(3);
         assertThat(table.isNumber(3)).isTrue();
     }
+
+    @DisplayName("주문을 등록")
+    @Test
+    void addOrder() {
+        Table table = TableRepository.findTableByNumber(3);
+
+        Menu menu = MenuRepository.findMenuByNumber(2);
+        OrderAmount orderAmount = new OrderAmount(5);
+
+        table.addOrder(menu, orderAmount);
+        Order order = table.getOrder();
+
+        assertThat(order.getOrderAmountOfMenu(menu)).isEqualTo(new OrderAmount(5));
+    }
 }
