@@ -57,7 +57,7 @@ public class OutputView {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("메뉴 수량 금액" + ENTER);
 
-        Map<Menu, OrderAmount> orderValue = order.getMenuAndOrderAmount();
+        Map<Menu, OrderAmount> orderValue = order.getOrderValue();
         for (Menu menu : orderValue.keySet()) {
             stringBuilder.append(menu.getName());
             stringBuilder.append(SPACE);

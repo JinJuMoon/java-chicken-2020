@@ -23,6 +23,7 @@ public class PayOrder implements MainFunction {
 
         final int paymentSystemNumber = InputView.inputPaymentSystem();
         Payment payment = PaymentFactory.from(paymentSystemNumber);
+        final int priceToPay = payment.calculatePriceToPay(order);
 
         return true;
     }

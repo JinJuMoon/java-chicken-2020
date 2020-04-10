@@ -35,7 +35,7 @@ class OrderAmountTest {
     private static Stream<Arguments> createAmountAndMessage() {
         return Stream.of(
                 Arguments.of(100, "주문 수량은 최대 99개입니다."),
-                Arguments.of(0, "주문 수량은 최소 1개입니다.")
+                Arguments.of(-1, "주문 수량은 최소 1개입니다.")
         );
     }
 }
