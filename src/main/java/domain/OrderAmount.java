@@ -11,7 +11,8 @@ public class OrderAmount {
     }
 
     private void validateAmount(int orderAmount) {
-        if (orderAmount < 1) {
+        System.out.println(orderAmount);
+        if (orderAmount < 0) {
             throw new IllegalArgumentException("주문 수량은 최소 1개입니다.");
         }
 
