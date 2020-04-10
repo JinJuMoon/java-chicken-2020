@@ -1,7 +1,10 @@
 package domain.function;
 
+import domain.Order;
 import domain.Table;
 import domain.TableRepository;
+import domain.payment.Payment;
+import domain.payment.PaymentFactory;
 import view.InputView;
 import view.OutputView;
 
@@ -13,11 +16,13 @@ public class PayOrder implements MainFunction {
         printTables();
         Table table = inputTable();
 
-        OutputView.printOrder(table.getOrder());
+        Order order = table.getOrder();
+        OutputView.printOrder(order);
 
         OutputView.printPayOrderMessage(table);
 
         final int paymentSystemNumber = InputView.inputPaymentSystem();
+        Payment payment = PaymentFactory.from(paymentSystemNumber);
 
         return true;
     }
