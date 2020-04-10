@@ -10,6 +10,16 @@ public class OutputView {
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "└ ─ ┘";
 
+    public static void printMainFunctions() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("## 메인 화면");
+        stringBuilder.append("1 - 주문등록");
+        stringBuilder.append("2 - 결제하기");
+        stringBuilder.append("3 - 프로그램 종료");
+
+        System.out.println(stringBuilder.toString());
+    }
+
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
         final int size = tables.size();
