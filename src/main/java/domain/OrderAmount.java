@@ -6,7 +6,18 @@ public class OrderAmount {
     private final int orderAmount;
 
     public OrderAmount(int orderAmount) {
+        validateAmount(orderAmount);
         this.orderAmount = orderAmount;
+    }
+
+    private void validateAmount(int orderAmount) {
+        if (orderAmount < 1) {
+            throw new IllegalArgumentException("주문 수량은 최소 1개입니다.");
+        }
+
+        if (orderAmount > 99) {
+            throw new IllegalArgumentException("주문 수량은 최대 99개입니다.");
+        }
     }
 
     public OrderAmount plus(OrderAmount other) {

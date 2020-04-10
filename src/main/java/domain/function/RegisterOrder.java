@@ -57,6 +57,7 @@ public class RegisterOrder implements MainFunction {
             final int orderAmountValue = InputView.inputOrderAmount();
             return new OrderAmount(orderAmountValue);
         } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
             return inputOrderAmount();
         }
     }
