@@ -6,16 +6,17 @@ import domain.Table;
 import java.util.List;
 
 public class OutputView {
+    private static final String ENTER = System.lineSeparator();
     private static final String TOP_LINE = "┌ ─ ┐";
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "└ ─ ┘";
 
     public static void printMainFunctions() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("## 메인 화면");
-        stringBuilder.append("1 - 주문등록");
-        stringBuilder.append("2 - 결제하기");
-        stringBuilder.append("3 - 프로그램 종료");
+        stringBuilder.append("## 메인 화면" + ENTER);
+        stringBuilder.append("1 - 주문등록" + ENTER);
+        stringBuilder.append("2 - 결제하기" + ENTER);
+        stringBuilder.append("3 - 프로그램 종료" + ENTER);
 
         System.out.println(stringBuilder.toString());
     }
