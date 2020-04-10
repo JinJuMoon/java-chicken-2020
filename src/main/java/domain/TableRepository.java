@@ -19,4 +19,11 @@ public class TableRepository {
     public static List<Table> tables() {
         return Collections.unmodifiableList(tables);
     }
+
+    public static Table findTableByNumber(final int number) {
+        return tables.stream()
+                .filter(table -> table.isNumber(number))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("해당 번호의 테이블은 존재하지 않습니다."));
+    }
 }
