@@ -40,8 +40,6 @@ public class OrderAmount {
 
     @Override
     public String toString() {
-        return "OrderAmount{" +
-                "orderAmount=" + orderAmount +
-                '}';
+        return String.valueOf(orderAmount);
     }
 }

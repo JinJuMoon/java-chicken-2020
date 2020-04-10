@@ -1,12 +1,16 @@
 package view;
 
 import domain.Menu;
+import domain.Order;
+import domain.OrderAmount;
 import domain.Table;
 
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
     private static final String ENTER = System.lineSeparator();
+    private static final String SPACE = " ";
     private static final String TOP_LINE = "┌ ─ ┐";
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "└ ─ ┘";
@@ -47,5 +51,22 @@ public class OutputView {
             System.out.printf(TABLE_FORMAT, table);
         }
         System.out.println();
+    }
+
+    public static void printOrder(Order order) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("메뉴 수량 금액" + ENTER);
+
+        Map<Menu, OrderAmount> orderValue = order.getMenuAndOrderaMount();
+        for (Menu menu : orderValue.keySet()) {
+            stringBuilder.append(menu.getName());
+            stringBuilder.append(SPACE);
+            stringBuilder.append(orderValue.get(menu));
+            stringBuilder.append(SPACE);
+            stringBuilder.append(menu.getPrice());
+            stringBuilder.append(ENTER);
+        }
+
+        System.out.println(stringBuilder.toString());
     }
 }

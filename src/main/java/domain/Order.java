@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collections;
 import java.util.Map;
 
 public class Order {
@@ -22,5 +23,9 @@ public class Order {
 
     public OrderAmount getOrderAmountOfMenu(Menu menu) {
         return order.get(menu);
+    }
+
+    public Map<Menu, OrderAmount> getMenuAndOrderaMount() {
+        return Collections.unmodifiableMap(order);
     }
 }
