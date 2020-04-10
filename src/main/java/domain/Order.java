@@ -25,7 +25,7 @@ public class Order {
         return order.get(menu);
     }
 
-    public Map<Menu, OrderAmount> getMenuAndOrderaMount() {
+    public Map<Menu, OrderAmount> getMenuAndOrderAmount() {
         return Collections.unmodifiableMap(order);
     }
 }

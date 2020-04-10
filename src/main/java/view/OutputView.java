@@ -57,7 +57,7 @@ public class OutputView {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("메뉴 수량 금액" + ENTER);
 
-        Map<Menu, OrderAmount> orderValue = order.getMenuAndOrderaMount();
+        Map<Menu, OrderAmount> orderValue = order.getMenuAndOrderAmount();
         for (Menu menu : orderValue.keySet()) {
             stringBuilder.append(menu.getName());
             stringBuilder.append(SPACE);
@@ -68,5 +68,9 @@ public class OutputView {
         }
 
         System.out.println(stringBuilder.toString());
+    }
+
+    public static void printPayOrderMessage(Table table) {
+        System.out.println(table.getNumber() + "번의 결제를 진행합니다.");
     }
 }

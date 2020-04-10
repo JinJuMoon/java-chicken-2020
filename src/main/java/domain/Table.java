@@ -19,6 +19,10 @@ public class Table {
         order.add(menu, orderAmount);
     }
 
+    public int getNumber() {
+        return number;
+    }
+
     public Order getOrder() {
         return order;
     }

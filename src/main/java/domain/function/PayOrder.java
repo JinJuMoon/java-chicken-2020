@@ -15,6 +15,10 @@ public class PayOrder implements MainFunction {
 
         OutputView.printOrder(table.getOrder());
 
+        OutputView.printPayOrderMessage(table);
+
+        final int paymentSystemNumber = InputView.inputPaymentSystem();
+
         return true;
     }
 
