@@ -11,10 +11,19 @@ public class Application {
         while (programIsRunning) {
             OutputView.printMainFunctions();
 
-            final int mainFunctionNumber = InputView.inputMainFunctionNumber();
-            MainFunction mainFunction = MainFunctionFactory.from(mainFunctionNumber);
+            MainFunction mainFunction = inputMainFunction();
 
             programIsRunning = mainFunction.execute();
+        }
+    }
+
+    private static MainFunction inputMainFunction() {
+        try {
+            final int mainFunctionNumber = InputView.inputMainFunctionNumber();
+            return MainFunctionFactory.from(mainFunctionNumber);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+            return inputMainFunction();
         }
     }
 }
